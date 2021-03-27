@@ -1,0 +1,295 @@
+/** Essaye a l'avenir de commenter tes codes */
+
+body {
+    margin: 1%;
+    /* On sera a 1% de la largeur du navigateur qui est de 13656px pour mon navigateur chrome */
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 650px;
+    /* en border-box le widht c'est la largeur sans les margins la on est en content-box donc la largeur du contenu */
+    height: auto;
+    /*Pour specifier que la hauteur s'adapte automatiquement*/
+}
+
+.sectionPrincipale1,
+.sectionPrincipale2 {
+    box-sizing: border-box;
+    border: double black;
+    width: calc(310px - 0.5%);
+    /*Largeur du contenu car on est en content box*/
+    margin-left: 0.5%;
+    padding: 1%;
+    /*Sa sera 2% de 650px ce qui est en content box de body; qu'on soit en content box ou en border box il fera 0.5 de ce qui est en content box */
+    background-color: lightgray;
+}
+
+.sectionPrincipale1 {
+    border-style: double;
+    float: left;
+}
+
+
+/*#fruits {
+    overflow: hidden;
+    border-collapse: collapse;
+    clear: both;
+    margin: 0%;
+}*/
+
+
+/*.sectionSecondaire1,
+.sectionSecondaire2 {
+
+    /*pour pouvoir mettre les sections côte à côte*/
+
+
+/*margin: 1%;*/
+
+
+/*s'ajuste en fonction du texte rédigé
+}*/
+
+.sectionSecondaire1 {
+    width: calc(60% - 1.5% * 2);
+    padding: 1.5%;
+    /*pour fixer la dessus de la liste de fruits*/
+    overflow: hidden;
+    float: left;
+}
+
+.sectionSecondaire2 {
+    float: right;
+    width: calc(40% - 1.5%);
+    margin-left: 1.5%;
+    padding-top: 10%;
+    /*pour fixer la dessus des boutton*/
+    /*margin-left: 2%;
+    padding-left: 15px;*/
+}
+
+button {
+    font-size: 15px;
+    text-align: center;
+    width: 75px;
+    /**Pour regler la largeur du bouton*/
+    /* padding: 0 10px 0 10px;*/
+    /* margin: 0 15px 0 0;*/
+}
+
+select#nomAliment {
+    float: left;
+    width: calc(67% - 9% - 6%);
+    padding: 0 5% 0 9%;
+}
+
+select#prixAliment {
+    width: calc(66% - 2 * 9%);
+    float: right;
+    padding: 0 9% 0 9%;
+}
+
+select {
+    overflow: hidden;
+    font-size: 15px;
+}
+
+fieldset {
+    border: 1px dotted black;
+    background-color: whitesmoke;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    padding: 5%;
+}
+
+fieldset:last-of-type {
+    margin-top: calc(4.695% / 2);
+    /* sera 8% de la section principale*/
+}
+
+fieldset:first-of-type {
+    margin-top: 0;
+}
+
+legend {
+    border: 1px dotted black;
+    padding: 1%;
+    background-color: whitesmoke;
+    /* padding: 5px;*/
+}
+
+#fruitage {
+    border: 1px solid black;
+}
+
+.sectionPrincipale2 {
+    float: right;
+}
+
+table {
+    box-sizing: content-box;
+    width: 100%;
+    clear: both;
+    /*margin :1% 1% 1% 1%;*/
+    padding-bottom: 1%;
+    padding-top: 1%;
+    border: double;
+    background-color: beige;
+}
+
+caption {
+    margin-bottom: 1%;
+}
+
+th {
+    border-bottom: 1px solid;
+    /*border-collapse: collapse;*/
+    font-style: italic;
+    font-weight: normal;
+    /*padding: 10px 14px 10px 15px;*/
+}
+
+th.article,
+th.quantite {
+    padding-left: 0.1%;
+    text-align: left;
+}
+
+th.prix,
+th.total {
+    padding-right: 0.1%;
+    text-align: right;
+}
+
+tbody tr td.tabarticle {
+    padding-left: 0.1%;
+    text-align: left;
+}
+
+tbody tr td {
+    text-align: right;
+}
+
+tbody tr td.tabtotaux {
+    /* selectionne tous les tr a l'interieur de tbody*/
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    /*padding: 0 10px 1px 10px;*/
+    color: blue;
+}
+
+tbody td {
+    border-right: 1.75px dotted black;
+    border-bottom: 1.75px dotted black;
+}
+
+#Total {
+    display: block;
+    border: double black;
+    /*float: right;*/
+    /*margin-right: 10px;*/
+    text-align: right;
+    /*margin-top: 5px;*/
+    /*padding: 0 10px 1px 10px;*/
+    font-weight: bold;
+    color: red;
+}
+
+#barecodecontainer {
+    visibility: hidden;
+}
+
+
+/*#date {
+    visibility: hidden;
+}*/
+
+
+/**
+
+MEDIA PRINT
+
+
+**/
+
+@media print {
+    #barcode {
+        clear: both;
+        font-weight: normal;
+        font-style: normal;
+        line-height: normal;
+        text-align: center;
+        padding-right: 40%;
+        /*font-family: sans-serif;*/
+    }
+    .sectionPrincipale1 {
+        visibility: hidden;
+    }
+    .sectionPrincipale2 {
+        width: 8cm;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        clear: both;
+        visibility: visible;
+    }
+    table {
+        box-sizing: content-box;
+        clear: both;
+        /*margin :1% 1% 1% 1%;*/
+        padding-bottom: 1%;
+        padding-top: 1%;
+        border: 1px solid black;
+    }
+    caption {
+        margin-bottom: 1%;
+    }
+    th {
+        border-bottom: 1px solid;
+        /*border-collapse: collapse;*/
+        font-style: italic;
+        font-weight: normal;
+        /*padding: 10px 14px 10px 15px;*/
+    }
+    th.article,
+    th.quantite {
+        padding-left: 0.1%;
+        text-align: left;
+    }
+    th.prix,
+    th.total {
+        padding-right: 0.1%;
+        text-align: right;
+    }
+    tbody tr td.tabarticle {
+        padding-left: 0.1%;
+        text-align: left;
+    }
+    tbody tr td {
+        text-align: right;
+    }
+    tbody tr td.tabtotaux {
+        /* selectionne tous les tr a l'interieur de tbody*/
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        /*padding: 0 10px 1px 10px;*/
+    }
+    tbody td {
+        border-right: 1.75px dotted black;
+        border-bottom: 1.75px dotted black;
+    }
+    #Total {
+        display: block;
+        border: double black;
+        /*float: right;*/
+        /*margin-right: 10px;*/
+        text-align: right;
+        /*margin-top: 5px;*/
+        /*padding: 0 10px 1px 10px;*/
+        font-weight: bold;
+    }
+    #barcodecontainer {
+        visibility: visible;
+    }
+}

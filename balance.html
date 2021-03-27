@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/balance.css">
+    <script src="htmlBarcodeOpenSource/openSource/code39/js/connectcode-javascript-code39.js">
+    </script>
+</head>
+
+<body>
+
+    <section class="sectionPrincipale1">
+        <form name="form1" action=#>
+            <fieldset>
+                <legend>Pesez votre article</legend>
+                <label for="poids">Poids</label>
+                <input type="text" name="poidsAliment" id="poids" placeholder="entre 50g et 10kg" required>
+            </fieldset>
+            <fieldset>
+                <legend>sélectionner l'article <br>
+                    <input type="radio" name="listeAliment" value="fruit" checked> Fruit <input type="radio" name="listeAliment" value="legume"> Legume
+                </legend>
+
+                <section class="sectionSecondaire1">
+                    <select name="nomAliments" id="nomAliment" onclick="synchroAliment();" required>
+                </select>
+                    <select name="prixAliments" id="prixAliment" onclick="synchroPrix();" required>
+                </select>
+                </section>
+                <section class="sectionSecondaire2">
+                    <button type="button">Ajouter</button><br>
+                    <button type="button" onclick="enleverAliment();">Enlever</button><br><br>
+                    <button type="button " onclick="imprimerAliment()">Imprimer</button><br><br>
+                    <button type="button ">Effacer</button>
+                </section>
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="sectionPrincipale2">
+        <table>
+            <caption> synthèse de votre achat </caption>
+            <thead>
+                <tr>
+                    <th scope="col " class="article ">article</th>
+                    <th scope="col " class="prix ">prix</th>
+                    <th scope="col " class="quantite ">qté(kg)</th>
+                    <th scope="col " class="total ">total</th>
+                </tr>
+            </thead>
+            <tbody id="tabFruit">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="Total"></td>
+                </tr>
+            </tfoot>
+        </table><br><br>
+        <div id="barecodecontainer" style="width: 5in">
+            <div id="barcode">
+                <div id="date"></div>
+            </div>
+    </section>
+    <script src="js/balance.js">
+    </script>
+</body>
+
+</html>
